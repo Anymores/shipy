@@ -1,0 +1,16 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: product-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: product-cus
+
+
