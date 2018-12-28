@@ -12,5 +12,8 @@ zuul:
     api-a:
       path: /api-a/**
       serviceId: product-cus
+    api-b:
+      path: /api-b/**
+      serviceId: manger-cus
 
 
