@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spy.dao.UserMapper">
 
-    <resultMap id="user_reslut" type="com.spy.entity.User">
-        <result column="ID" property="id"/>
-        <result column="NAME" property="name"/>
-        <result column="NICK_NAME" property="nickName"/>
-        <result column="PASSWORD" property="passWord"/>
-        <result column="PHONE" property="phone"/>
-        <result column="CREAT_TIME" property="creatDate"/>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.spy.entity.User">
+        <id column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="NICK_NAME" property="nickName" />
+        <result column="PASSWORD" property="password" />
+        <result column="PHONE" property="phone" />
+        <result column="CREAT_TIME" property="creatTime" />
     </resultMap>
 
-    <sql id="user_list">
-        ID,NAME,NICK_NAME,PASSWORD,PHONE,CREAT_TIME
-    </sql>
-
-    <select id="selectUsers" resultMap="user_reslut">
-        SELECT
-        <include refid="user_list"/>
-        FROM U_USER
-    </select>
 </mapper>

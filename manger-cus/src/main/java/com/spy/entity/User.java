@@ -1,41 +1,49 @@
 package com.spy.entity;
 
-import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
-public class User {
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
-    private Long id;
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author shipy
+ * @since 2019-01-06
+ */
+@TableName("u_user")
+public class User implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @TableId("ID")
+    private String id;
+
+    @TableField("NAME")
     private String name;
 
+    @TableField("NICK_NAME")
     private String nickName;
 
-    private String passWord;
+    @TableField("PASSWORD")
+    private String password;
 
+    @TableField("PHONE")
     private String phone;
 
-    private Date creatDate;
+    @TableField("CREAT_TIME")
+    private LocalDateTime creatTime;
 
-    public User() {
-    }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", phone='" + phone + '\'' +
-                ", creatDate=" + creatDate +
-                '}';
-    }
-
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -55,12 +63,12 @@ public class User {
         this.nickName = nickName;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhone() {
@@ -71,11 +79,23 @@ public class User {
         this.phone = phone;
     }
 
-    public Date getCreatDate() {
-        return creatDate;
+    public LocalDateTime getCreatTime() {
+        return creatTime;
     }
 
-    public void setCreatDate(Date creatDate) {
-        this.creatDate = creatDate;
+    public void setCreatTime(LocalDateTime creatTime) {
+        this.creatTime = creatTime;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+        "id=" + id +
+        ", name=" + name +
+        ", nickName=" + nickName +
+        ", password=" + password +
+        ", phone=" + phone +
+        ", creatTime=" + creatTime +
+        "}";
     }
 }

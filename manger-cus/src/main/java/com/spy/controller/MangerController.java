@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class MangerController {
 
@@ -17,7 +19,7 @@ public class MangerController {
 
     @RequestMapping(value = "/getUsers",method = RequestMethod.GET)
     @ResponseBody
-    public User getUsers(){
+    public List<User> getUsers(){
         return mangerService.getUsers();
     }
 
